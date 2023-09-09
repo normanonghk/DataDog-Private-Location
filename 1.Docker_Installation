@@ -1,0 +1,17 @@
+#download docker binaries
+sudo wget https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/containerd.io_1.6.22-1_amd64.deb
+sudo wget https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/docker-buildx-plugin_0.11.2-1~ubuntu.22.04~jammy_amd64.deb
+sudo wget https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/docker-ce-cli_24.0.6-1~ubuntu.22.04~jammy_amd64.deb
+sudo wget https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/docker-ce_24.0.6-1~ubuntu.22.04~jammy_amd64.deb
+sudo wget https://download.docker.com/linux/ubuntu/dists/jammy/pool/stable/amd64/docker-compose-plugin_2.21.0-1~ubuntu.22.04~jammy_amd64.deb
+
+#Install docker
+sudo dpkg -i ./containerd.io_1.6.22-1_amd64.deb \
+  ./docker-ce_24.0.6-1~ubuntu.22.04~jammy_amd64.deb \
+  ./docker-ce-cli_24.0.6-1~ubuntu.22.04~jammy_amd64.deb \
+  ./docker-buildx-plugin_0.11.2-1~ubuntu.22.04~jammy_amd64.deb \
+  ./docker-compose-plugin_2.21.0-1~ubuntu.22.04~jammy_amd64.deb
+
+#start and test docker installation
+sudo service docker start
+sudo docker run hello-world
