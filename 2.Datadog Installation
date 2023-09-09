@@ -1,0 +1,3 @@
+#Start the container in detached mode with restart policy
+
+sudo docker run --restart unless-stopped -d -v $PWD/worker-config-<LOCATION_ID>.json:/etc/datadog/synthetics-check-runner.json datadog/synthetics-private-location-worker
